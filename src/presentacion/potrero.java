@@ -3,30 +3,34 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package presentacion;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JRadioButtonMenuItem;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Random;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
-import static presentacion.main.fechaActual;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
  * @author ovied
  */
 public class potrero extends javax.swing.JPanel {
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-String fechaActual = dateFormat.format(new Date());
+    DefaultTableModel modelo;
     /**
      * Creates new form potrero
      */
     public potrero() {
         initComponents();
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Estado");
+        modelo.addColumn("Entrada");
+        modelo.addColumn("Salida");
+        modelo.addColumn("Cantidad de animales");
+        modelo.addColumn("Posee agua");
+        modelo.addColumn("Terreno");
+        
+        this.tablaPotrero.setModel(modelo);
     }
 
     /**
@@ -38,366 +42,198 @@ String fechaActual = dateFormat.format(new Date());
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Potrero3 = new javax.swing.JPanel();
-        btnDatos3 = new javax.swing.JButton();
-        content3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        Potrero2 = new javax.swing.JPanel();
-        btnDatos2 = new javax.swing.JButton();
-        content2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        Potrero4 = new javax.swing.JPanel();
-        btnDatos4 = new javax.swing.JButton();
-        content4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        Potrero1 = new javax.swing.JPanel();
-        btnDatos1 = new javax.swing.JButton();
-        content1 = new javax.swing.JPanel();
+        botones = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtEntrada1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        bOcupado = new javax.swing.JRadioButton();
+        bLibre = new javax.swing.JRadioButton();
+        txtEntrada = new com.toedter.calendar.JDateChooser();
+        txtSalida = new com.toedter.calendar.JDateChooser();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaPotrero = new javax.swing.JTable();
+        btnInsertar = new javax.swing.JButton();
+        txtCantidad = new javax.swing.JTextField();
+        txtAgua = new javax.swing.JTextField();
+        txtTerreno = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(115, 64, 13));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        Potrero3.setBackground(new java.awt.Color(57, 183, 0));
+        jLabel1.setText("Codigo");
 
-        btnDatos3.setText("Datos");
+        jLabel2.setText("Nombre");
 
-        javax.swing.GroupLayout content3Layout = new javax.swing.GroupLayout(content3);
-        content3.setLayout(content3Layout);
-        content3Layout.setHorizontalGroup(
-            content3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 308, Short.MAX_VALUE)
-        );
-        content3Layout.setVerticalGroup(
-            content3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jLabel3.setText("Estado");
 
-        jLabel7.setText("3");
+        jLabel4.setText("Fecha de entrada");
 
-        javax.swing.GroupLayout Potrero3Layout = new javax.swing.GroupLayout(Potrero3);
-        Potrero3.setLayout(Potrero3Layout);
-        Potrero3Layout.setHorizontalGroup(
-            Potrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Potrero3Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(btnDatos3)
-                .addGap(166, 166, 166))
-            .addGroup(Potrero3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(Potrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Potrero3Layout.createSequentialGroup()
-                    .addGap(52, 52, 52)
-                    .addComponent(content3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(52, Short.MAX_VALUE)))
-        );
-        Potrero3Layout.setVerticalGroup(
-            Potrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Potrero3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
-                .addComponent(btnDatos3)
-                .addContainerGap())
-            .addGroup(Potrero3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Potrero3Layout.createSequentialGroup()
-                    .addGap(66, 66, 66)
-                    .addComponent(content3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(67, Short.MAX_VALUE)))
-        );
+        jLabel5.setText("Fecha de salida");
 
-        Potrero2.setBackground(new java.awt.Color(57, 183, 0));
+        jLabel6.setText("Cantidad de animales");
 
-        btnDatos2.setText("Datos");
+        jLabel7.setText("Posee agua");
 
-        javax.swing.GroupLayout content2Layout = new javax.swing.GroupLayout(content2);
-        content2.setLayout(content2Layout);
-        content2Layout.setHorizontalGroup(
-            content2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 308, Short.MAX_VALUE)
-        );
-        content2Layout.setVerticalGroup(
-            content2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jLabel8.setText("Tipo de terreno");
 
-        jLabel6.setText("2");
+        bOcupado.setText("Ocupado");
 
-        javax.swing.GroupLayout Potrero2Layout = new javax.swing.GroupLayout(Potrero2);
-        Potrero2.setLayout(Potrero2Layout);
-        Potrero2Layout.setHorizontalGroup(
-            Potrero2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Potrero2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDatos2)
-                .addGap(162, 162, 162))
-            .addGroup(Potrero2Layout.createSequentialGroup()
-                .addGroup(Potrero2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Potrero2Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(content2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Potrero2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel6)))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-        Potrero2Layout.setVerticalGroup(
-            Potrero2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Potrero2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(content2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(btnDatos2))
-        );
+        bLibre.setText("Libre");
 
-        Potrero4.setBackground(new java.awt.Color(57, 183, 0));
+        tablaPotrero.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaPotrero);
 
-        btnDatos4.setText("Datos");
-
-        javax.swing.GroupLayout content4Layout = new javax.swing.GroupLayout(content4);
-        content4.setLayout(content4Layout);
-        content4Layout.setHorizontalGroup(
-            content4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 308, Short.MAX_VALUE)
-        );
-        content4Layout.setVerticalGroup(
-            content4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jLabel8.setText("4");
-
-        javax.swing.GroupLayout Potrero4Layout = new javax.swing.GroupLayout(Potrero4);
-        Potrero4.setLayout(Potrero4Layout);
-        Potrero4Layout.setHorizontalGroup(
-            Potrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Potrero4Layout.createSequentialGroup()
-                .addContainerGap(175, Short.MAX_VALUE)
-                .addComponent(btnDatos4)
-                .addGap(161, 161, 161))
-            .addGroup(Potrero4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(Potrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Potrero4Layout.createSequentialGroup()
-                    .addGap(52, 52, 52)
-                    .addComponent(content4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(52, Short.MAX_VALUE)))
-        );
-        Potrero4Layout.setVerticalGroup(
-            Potrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Potrero4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
-                .addComponent(btnDatos4)
-                .addContainerGap())
-            .addGroup(Potrero4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Potrero4Layout.createSequentialGroup()
-                    .addGap(66, 66, 66)
-                    .addComponent(content4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(67, Short.MAX_VALUE)))
-        );
-
-        Potrero1.setBackground(new java.awt.Color(57, 183, 0));
-
-        btnDatos1.setText("Datos");
-        btnDatos1.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertar.setText("Insertar");
+        btnInsertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDatos1ActionPerformed(evt);
+                btnInsertarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout content1Layout = new javax.swing.GroupLayout(content1);
-        content1.setLayout(content1Layout);
-        content1Layout.setHorizontalGroup(
-            content1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 308, Short.MAX_VALUE)
-        );
-        content1Layout.setVerticalGroup(
-            content1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jLabel1.setText("Estado");
-
-        jLabel2.setText("Entrada");
-
-        jLabel3.setText("Salida");
-
-        jLabel4.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                jLabel4ComponentAdded(evt);
-            }
-        });
-
-        txtEntrada1.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                txtEntrada1ComponentAdded(evt);
-            }
-        });
-
-        jLabel5.setText("1");
-
-        javax.swing.GroupLayout Potrero1Layout = new javax.swing.GroupLayout(Potrero1);
-        Potrero1.setLayout(Potrero1Layout);
-        Potrero1Layout.setHorizontalGroup(
-            Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Potrero1Layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Potrero1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Potrero1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64))))
-            .addGroup(Potrero1Layout.createSequentialGroup()
-                .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Potrero1Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDatos1)))
-                    .addGroup(Potrero1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)))
-                .addContainerGap(168, Short.MAX_VALUE))
-            .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Potrero1Layout.createSequentialGroup()
-                    .addGap(52, 52, 52)
-                    .addComponent(content1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(52, Short.MAX_VALUE)))
-        );
-        Potrero1Layout.setVerticalGroup(
-            Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Potrero1Layout.createSequentialGroup()
-                .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Potrero1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(Potrero1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)
-                        .addGap(65, 65, 65)
-                        .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(btnDatos1))
-            .addGroup(Potrero1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Potrero1Layout.createSequentialGroup()
-                    .addGap(66, 66, 66)
-                    .addComponent(content1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(67, Short.MAX_VALUE)))
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                        .addComponent(txtNombre))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtSalida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtEntrada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(bOcupado)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(bLibre))))
+                .addGap(82, 82, 82)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtCantidad)
+                    .addComponent(txtAgua)
+                    .addComponent(txtTerreno, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Potrero3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Potrero4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 923, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Potrero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 70, Short.MAX_VALUE)
-                        .addComponent(Potrero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(41, 41, 41))
+                        .addGap(342, 342, 342)
+                        .addComponent(btnInsertar)))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel6)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel7)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel8)
+                    .addComponent(bOcupado)
+                    .addComponent(bLibre)
+                    .addComponent(txtTerreno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Potrero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Potrero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                    .addComponent(jLabel4)
+                    .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Potrero3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Potrero4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49))
+                    .addComponent(jLabel5)
+                    .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnInsertar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDatos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDatos1ActionPerformed
+    private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         // TODO add your handling code here:
-        String entrada_ganado = JOptionPane.showInputDialog(null, "DIGITE CUANDO ENTRARO EL GANADO: " + "LA FECHA ACTUAL ES: " + fechaActual, "");
-       
         
-        String[] componentes = entrada_ganado.split("/");
-        String Salida_ganado = "";
-
-        if (componentes.length == 3) {
-            try {
-                int dia = Integer.parseInt(componentes[0]);
-                int mes = Integer.parseInt(componentes[1]);
-                int ano = Integer.parseInt(componentes[2]);
-
-                dia += 5;
-                while (dia > 31) {
-                    dia -= 31;
-                    mes += 1;
-                    if (mes > 12) {
-                        mes = 1;
-                        ano += 1;
-                    }
-                }
-
-                Salida_ganado = dia + "/" + mes + "/" + ano;
-                
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Error: La fecha ingresada no es valida.", "Error", 0);
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "LA FECHA SE DIGITO EN MAL FORMATO", "ERROR", 0);
+        
+        botones.add(bLibre);
+        botones.add(bOcupado);
+        String []info=new String[8];
+        info[0]=txtCodigo.getText();
+        info[1]=txtNombre.getText();
+        if (bLibre.isSelected()){
+            info[2]= "Libre";
+        }else if (bOcupado.isSelected()){ info[2]= "Ocupado";}else{ 
+            info[2]= "Sin estado";
         }
-    }//GEN-LAST:event_btnDatos1ActionPerformed
-
-    private void jLabel4ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jLabel4ComponentAdded
-        // TODO add your handling code here:
-      
-    }//GEN-LAST:event_jLabel4ComponentAdded
-
-    private void txtEntrada1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_txtEntrada1ComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEntrada1ComponentAdded
+        SimpleDateFormat fecha=new SimpleDateFormat("dd-MM-yyyy");
+        String date = fecha.format(txtEntrada.getDate());
+        
+        
+        SimpleDateFormat fecha2=new SimpleDateFormat("dd-MM-yyyy");
+        String date2 = fecha2.format(txtSalida.getDate());
+        
+        info[3]= date;
+        info[4]= date2;      
+        info[5]=txtCantidad.getText();
+        info[6]=txtAgua.getText();
+        info[7]=txtTerreno.getText();
+        
+        modelo.addRow(info);
+        
+        txtCodigo.setText("");
+        txtNombre.setText("");
+        txtEntrada.setDateFormatString("");
+        txtSalida.setDateFormatString("");
+        txtCantidad.setText("");
+        txtAgua.setText("");
+        txtTerreno.setText("");
+         
+    }//GEN-LAST:event_btnInsertarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Potrero1;
-    private javax.swing.JPanel Potrero2;
-    private javax.swing.JPanel Potrero3;
-    private javax.swing.JPanel Potrero4;
-    private javax.swing.JButton btnDatos1;
-    private javax.swing.JButton btnDatos2;
-    private javax.swing.JButton btnDatos3;
-    private javax.swing.JButton btnDatos4;
-    private javax.swing.JPanel content1;
-    private javax.swing.JPanel content2;
-    private javax.swing.JPanel content3;
-    private javax.swing.JPanel content4;
+    private javax.swing.JRadioButton bLibre;
+    private javax.swing.JRadioButton bOcupado;
+    private javax.swing.ButtonGroup botones;
+    private javax.swing.JButton btnInsertar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -406,6 +242,14 @@ String fechaActual = dateFormat.format(new Date());
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel txtEntrada1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablaPotrero;
+    private javax.swing.JTextField txtAgua;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtCodigo;
+    private com.toedter.calendar.JDateChooser txtEntrada;
+    private javax.swing.JTextField txtNombre;
+    private com.toedter.calendar.JDateChooser txtSalida;
+    private javax.swing.JTextField txtTerreno;
     // End of variables declaration//GEN-END:variables
 }
