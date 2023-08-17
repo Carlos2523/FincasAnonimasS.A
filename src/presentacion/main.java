@@ -128,6 +128,11 @@ public class main extends javax.swing.JFrame {
         reporte.setBorderPainted(false);
         reporte.setContentAreaFilled(false);
         reporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reporteActionPerformed(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/newpackage/imagenes/bull-1837489_640 (1).png"))); // NOI18N
 
@@ -299,6 +304,17 @@ public class main extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }//GEN-LAST:event_ganadoActionPerformed
+
+    private void reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporteActionPerformed
+        // TODO add your handling code here:
+        reporte p5 = new reporte();
+        p5.setSize(970, 570);
+        p5.setLocation(0, 0);
+        content.removeAll();
+        content.add(p5,BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }//GEN-LAST:event_reporteActionPerformed
     public static String fechaActual(){
         Date fecha = new Date();
         SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYYY");

@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  * @author ovied
  */
 public class ganado extends javax.swing.JPanel {
-    DefaultTableModel modelo;
+    DefaultTableModel modeloGanado;
     
     
     
@@ -22,14 +22,14 @@ public class ganado extends javax.swing.JPanel {
      */
     public ganado() {
         initComponents();
-        modelo = new DefaultTableModel();
-        modelo.addColumn("Codigo");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Fecha de nacimiento");
-        modelo.addColumn("Peso");
-        modelo.addColumn("Sexo");
-        modelo.addColumn("Raza");
-        this.tablaGanado.setModel(modelo);
+        modeloGanado = new DefaultTableModel();
+        modeloGanado.addColumn("Codigo");
+        modeloGanado.addColumn("Nombre");
+        modeloGanado.addColumn("Fecha de nacimiento");
+        modeloGanado.addColumn("Peso");
+        modeloGanado.addColumn("Sexo");
+        modeloGanado.addColumn("Raza");
+        this.tablaGanado.setModel(modeloGanado);
     }
 
     /**
@@ -287,7 +287,7 @@ public class ganado extends javax.swing.JPanel {
             info[4]= "N/A";
         }
         info[5]=txtRaza.getText();
-        modelo.addRow(info);
+        modeloGanado.addRow(info);
         
         txtCodigo.setText("");
         txtNombre.setText("");
@@ -301,14 +301,14 @@ public class ganado extends javax.swing.JPanel {
         // TODO add your handling code here:
         int fila = Integer.parseInt(txtFila.getText());
         int columna = Integer.parseInt(txtColumna.getText());
-        modelo.setValueAt(txtNuevodato.getText(), fila-1, columna-1);
+        modeloGanado.setValueAt(txtNuevodato.getText(), fila-1, columna-1);
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void txtEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEliminarActionPerformed
         // TODO add your handling code here:
         int fila=tablaGanado.getSelectedRow();
         if(fila>=0){
-            modelo.removeRow(fila);
+            modeloGanado.removeRow(fila);
         }else{
             JOptionPane.showMessageDialog(null, "Seleccione una fila");
         }
